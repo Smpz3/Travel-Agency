@@ -1,0 +1,15 @@
+
+@Host= http://localhost:7000
+@urlClient=/api/client 
+@urlHotel=/api/hotel
+@urlTrip=/api/trip 
+########
+
+### 
+GET {{Host}}{{urlClient}}
+
+### 
+GET {{Host}}{{urlHotel}}
+
+### 
+GET {{Host}}{{urlTrip}}
