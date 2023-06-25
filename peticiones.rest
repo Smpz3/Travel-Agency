@@ -4,7 +4,6 @@
 @urlHotel=/api/hotel
 @urlTrip=/api/trip 
 ########
-
 ### 
 GET {{Host}}{{urlClient}}
 
