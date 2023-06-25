@@ -7,8 +7,21 @@
 ### 
 GET {{Host}}{{urlClient}}
 ###
-GET {{Host}}{{urlClient}}/23
+GET {{Host}}{{urlClient}}/4
+###
+POST {{Host}}{{urlClient}}
+Content-Type:application/json
 
+{
+    "name" : "Sofiah", 
+    "lastname": "Paez",
+    "address": "1234 lane", 
+    "phone":"9543007057", 
+    "dob":"1999/04/03", 
+    "email":"sofyy@gmail.com",
+    "dni": "000003"
+    
+}
 ### 
 GET {{Host}}{{urlHotel}}
 ###
