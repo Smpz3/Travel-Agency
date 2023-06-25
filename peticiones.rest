@@ -6,9 +6,15 @@
 ########
 ### 
 GET {{Host}}{{urlClient}}
+###
+GET {{Host}}{{urlClient}}/23
 
 ### 
 GET {{Host}}{{urlHotel}}
+###
+GET {{Host}}{{urlHotel}}/5
 
 ### 
 GET {{Host}}{{urlTrip}}
+###
+GET {{Host}}{{urlTrip}}/6
