@@ -4,24 +4,40 @@
 @urlHotel=/api/hotel
 @urlTrip=/api/trip 
 ########
-### 
+### Get all clients
 GET {{Host}}{{urlClient}}
-###
-GET {{Host}}{{urlClient}}/4
-###
+###Get one client by ID
+GET {{Host}}{{urlClient}}/6
+###Find client info by ID
 POST {{Host}}{{urlClient}}
 Content-Type:application/json
 
 {
-    "name" : "Sofiah", 
+    "name" : "Joey", 
     "lastname": "Paez",
-    "address": "1234 lane", 
-    "phone":"9543007057", 
-    "dob":"1999/04/03", 
-    "email":"sofyy@gmail.com",
-    "dni": "000003"
+    "address": "1236 lane", 
+    "phone":"9543007058", 
+    "dob":"2007/08/03", 
+    "email":"joey@gmail.com",
+    "dni": "000004"
     
 }
+###delete client by ID 
+DELETE {{Host}}{{urlClient}}/4
+### update petition (put)
+PUT {{Host}}{{urlClient}}/update/1  
+Content-Type:application/json
+
+{
+    "name" : "mary", 
+    "lastname": "Paez",
+    "address": "1238 lane", 
+    "phone":"9543007059", 
+    "dob":"2009/08/03", 
+    "email":"mary@gmail.com",
+    "dni": "000006"
+}
+
 ### 
 GET {{Host}}{{urlHotel}}
 ###
@@ -30,4 +46,4 @@ GET {{Host}}{{urlHotel}}/5
 ### 
 GET {{Host}}{{urlTrip}}
 ###
-GET {{Host}}{{urlTrip}}/6
+GET {{Host}}{{urlTrip}}/6 
