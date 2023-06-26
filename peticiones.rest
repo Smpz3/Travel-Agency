@@ -2,7 +2,10 @@
 @Host= http://localhost:7000
 @urlClient=/api/client 
 @urlHotel=/api/hotel
-@urlTrip=/api/trip 
+@urlTrip=/api/trip
+
+####
+
 ########
 ### Get all clients
 GET {{Host}}{{urlClient}}
@@ -13,13 +16,8 @@ POST {{Host}}{{urlClient}}
 Content-Type:application/json
 
 {
-    "name" : "Joey", 
-    "lastname": "Paez",
-    "address": "1236 lane", 
-    "phone":"9543007058", 
-    "dob":"2007/08/03", 
-    "email":"joey@gmail.com",
-    "dni": "000004"
+    "name" : "James", "lastname": "Bond","address": "1236 street", "phone":"9543007067", "dob":"1967/10/03",  "email":"bond@gmail.com",
+    "dni": "000008"
     
 }
 ###delete client by ID 
@@ -29,21 +27,61 @@ PUT {{Host}}{{urlClient}}/update/1
 Content-Type:application/json
 
 {
-    "name" : "mary", 
-    "lastname": "Paez",
-    "address": "1238 lane", 
-    "phone":"9543007059", 
-    "dob":"2009/08/03", 
-    "email":"mary@gmail.com",
+    "name" : "mary",  "lastname": "Paez", "address": "1238 lane","phone":"9543007059", "dob":"2009/08/03",  "email":"mary@gmail.com",
     "dni": "000006"
 }
 
-### 
+### get all hotels 
 GET {{Host}}{{urlHotel}}
+### get one hotel by id 
+GET {{Host}}{{urlHotel}}/7
+### Post one hotel 
+POST {{Host}}{{urlHotel}}
+Content-Type: application/json
+
+{
+    "name":"The Plaza" , "address":"12 YMH street", "city":"New York", "star_rating":"5" , "description":"Great place" , "nightly_rate":"100.20"
+}
+
+### delete one hotel by id 
+DELETE {{Host}}{{urlHotel}}/10
+### Update info for a hotel 
+PUT {{Host}}{{urlHotel}}/update/9
+Content-Type:application/json
+
+{
+    "name":"Only Plaza", "address":"1st street", "city":"Miami", "star_rating":"5", "description":"Amazing place", "nightly_rate":"200.00"
+}
+### get all trips 
+GET {{Host}}{{urlTrip}}
+### get one trip by id 
+GET {{Host}}{{urlTrip}}/3
 ###
-GET {{Host}}{{urlHotel}}/5
+POST {{Host}}{{urlTrip}}  
+Content-Type: application/json
+
+{
+    "departure_date":"2026-06-28 10:34:56", "return_date":"2027-06-29 20:34:56", "departure_flight":"PLWQT", 
+    "return_flight":"LKPOT",
+    "hotel":"Only Plaza", 
+    "Clients_id":"10", 
+    "Hotel_id":"9" 
+}
 
 ### 
-GET {{Host}}{{urlTrip}}
+DELETE {{Host}}{{urlTrip}}/2
+#### 
+PUT {{Host}}{{urlTrip}}/udate/3  
+Content-Type: application/json
+
+{
+    "departure_date":"2023-07-28 12:34:56" , 
+    "return_date":"2023-10-28 12:34:56" , 
+    "departure_flight": "XXAWE", 
+    "return_flight":"XXAWE" , 
+    "hotel":"Just Plaza", 
+    "Clients_id": "1" , 
+    "Hotel_id":"7", 
+}
 ###
-GET {{Host}}{{urlTrip}}/6 
+PUT {{Host}}{{urlTrip}}/3/client/3

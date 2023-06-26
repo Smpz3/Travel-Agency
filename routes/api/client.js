@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-//get one client info 
+//get one client info by id
 router.get('/:id', async (req, res) => {
     try {
         
@@ -23,7 +23,7 @@ router.get('/:id', async (req, res) => {
 
     }
 }); 
-// sending info to client 
+// sending new info to client 
 router.post('/', async (req, res) => {
     try {
         const [result] = await create(req.body)
@@ -32,11 +32,11 @@ router.post('/', async (req, res) => {
         res.json({ 'fatal': error.message });
     }
 });
-//deleting 
+//deleting client by id
 router.delete('/:id', async (req, res) => {
     try {
         const [result] = await deleteClientById(Number(req.params.id)); 
-        res.json(result); 
+        res.json(result)
     } catch (error){
         res.json({ 'fatal': error.message });
    }
@@ -46,7 +46,7 @@ router.put('/update/:id', async (req, res) => {
     try {
         const [result] = await update(Number(req.params.id), req.body);
         const [result_final] = await getById(Number(req.params.id));
-        res.json(result_final);
+        res.json(result_final)
     } catch (error) {
         res.json({ fatal: error.message });
     }
